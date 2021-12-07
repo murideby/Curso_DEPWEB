@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de produtos</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Cadastro de Produtos</h1><br><br>
+    <form class="formulario"name="form1" action="enviar.php" method="post">
+        <label>Nome do produto*:</label>
+        <input name="nome" type="text">
+        <label>Marca*: </label>
+        <input name="marca" type="text"><br><br>
+        <label>Cor:</label>
+        <input name="cor" type="color">
+        <label>Unidade*: </label>
+        <input name="unidade" type="int"><br><br>
+        <label>Categoria*: </label>
+        <input name="categoria" type="text">
+        <label>Fornecedor*: </label>
+        <input name="fornecedor" type="text"><br><br>
+        <label>Altura(cm)*:</label>
+        <input name="altura" type="float">
+        <label>Largura(cm)*:</label>
+        <input name="largura" type="float"><br><br>
+        <label>Código promocional*</label>
+        <input name=codigo_promo type="text">
+        <label>Repetir o código*</label>
+        <input name=rep_codigo type="text"><br><br>
+        <input class="botao" type="submit" onclick="return validar()"/>
+    </form>
+    <script>
+        function validar(){
+            var nome = form1.nome.value
+            var marca = form1.marca.value
+            var categoria = form1.categoria.value
+            var fornecedor = form1.fornecedor.value
+            var unidade = form1.unidade.value
+            var altura = form1.altura.value
+            var largura = form1.largura.value
+            var codigo_promo = form1.codigo_promo.value
+            var rep_codigo = form1.rep_codigo.value
+            
+            if (nome == "") {
+                alert("Preencha o campo corretamente!")
+                form1.nome.focus()
+                return false
+            }
+            if (marca == ""){
+                alert("Preencha todos os campos obrigatórios(*)")
+                form1.marca.focus()
+                return false
+            }
+            if (categoria == ""){
+                alert("Preencha todos os campos obrigatórios(*)")
+                form1.categoria.focus()
+                return false
+            }
+            if (fornecedor == ""){
+                alert("Preencha todos os campos obrigatórios(*)")
+                form1.fornecedor.focus()
+                return false
+            }
+            if (unidade == ""){
+                alert("Preencha todos os campos obrigatórios(*)")
+                form1.unidade.focus()
+                return false
+            }
+            if (altura == ""){
+                alert("Preencha todos os campos obrigatórios(*)")
+                form1.altura.focus()
+                return false
+            }
+            if (largura == ""){
+                alert("Preencha todos os campos obrigatórios(*)")
+                form1.largura.focus()
+                return false
+            }
+            if (codigo_promo != rep_codigo){
+                alert("Códigos promocionais são diferentes! ")
+                form1.codigo_promo.focus()
+                return false
+            }
+
+
+        }
+
+    </script>
+</body>
+</html>
